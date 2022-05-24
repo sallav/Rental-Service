@@ -1,0 +1,30 @@
+.tab {
+    display: inline-block;
+    margin-left: 40px;
+}
+
+.resultrow {
+    margin: 5px 10px 40px 20px;
+}
+
+.resultheader {
+    background-color: blueviolet;
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 500px;
+    height: 30px;
+    padding: 0 10px 0 10px;
+}
+
+.resultcontent {
+    background-color: plum;
+    width: 500px;
+    padding: 2px 10px 2px 10px;
+}
+
+.result {
+    text-decoration: none;
+    color: black;
+}

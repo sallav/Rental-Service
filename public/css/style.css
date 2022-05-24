@@ -1,0 +1,49 @@
+body {
+    background-color: snow;
+}
+
+input {
+    margin: 2px 10px 12px 10px;
+    position: sticky;
+    left: 80px;
+    width: 65%;
+}
+fieldset {
+    padding: 0px 20px 30px 20px;
+    margin: 20px 30px 20px 30px;
+    position: relative;
+    border-radius: 12px 0 12px 0;
+    border: solid 2px gainsboro;
+    background: linear-gradient(bisque, blanchedalmond, floralwhite);
+}
+.inputs {
+    background-color:blanchedalmond;
+    position: relative;
+    top: 10px;
+    left: 2%;
+    float: left;
+    padding: 15px 10px 15px 15px;
+    width: 300px;
+    border-radius: 3px;
+}
+.labels {
+    
+    width: 5%;
+    position: relative;
+    top:10px;
+    left: 1%;
+    float: left;
+    padding: 2px
+}
+.submit{
+    width: 40%;
+    padding: 4px 0 3px 0;
+    border-radius: 5px;
+    border: solid 1px lightslategray;
+    background-color: ghostwhite;
+}
+p {
+    padding: 7px 5px 5px 5px;
+    margin: 10px 2px 4px 2px;
+    font-size: 16px;
+}
