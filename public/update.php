@@ -23,11 +23,7 @@ require "../common.php";
  }
 
  if (isset($_GET['id'])) {
-     try {
-        $rental = dbactions::getRentalForEditingFromDatabase($_GET['id']);
-     } catch(Exception $error) {
-         echo $error->getMessage();
-     }
+        $rental = dbactions::getRentalById($_GET['id']);
  } else {
      echo "Something went wrong!";
      exit;
@@ -48,13 +44,13 @@ require "../common.php";
              echo "Add date: " . date("d-m-Y H:i", strtotime($value)); ?>
              <br> <?php 
         } else { ?>
-         <label for="<?php echo $key; ?>"><?php echo ucfirst($key); ?></label>
+         <label for="<?php echo $key; ?>"><?php echo ucfirst(str_replace("_", " ", $key)); ?></label>
          <input type="text" name="<?php echo $key; ?>" id="<?php echo $key; ?>" value="<?php echo $value; ?>" <?php echo ($key === 'id' ? 'readonly' : null); ?>>
-         <br>
+        <br>
      <?php } } ?> 
      <input type="submit" name="submit" value="Submit">
 </form>
 
-<a href="admin_list_rentals.php">Back to listing</a>
+<p><a href="admin_list_rentals.php">Back to listing</a></p>
 
 <?php require "templates/footer.php"; ?>

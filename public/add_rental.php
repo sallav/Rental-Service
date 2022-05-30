@@ -8,7 +8,7 @@ if (isset($_POST['submit'])) {
             "vehicle_description" => $_POST['description'],
             "price" => $_POST['price']
         );
-        $success = dbactions::addRentalToDatabase($new_rental);
+        $success = dbactions::addRental($new_rental);
     } catch(Exception $error){
         echo $error->getMessage();
     }

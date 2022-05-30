@@ -7,5 +7,6 @@
     <link rel="stylesheet" href="css/admin_style.css" />
 </head>
 <body>
+    <a href="index.php"><< Front page</a>
     <h1>Manage rentals</h1>
     

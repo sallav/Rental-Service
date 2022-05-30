@@ -5,15 +5,15 @@ require "dbactions.php";
 if (isset($_POST['submit'])) {
     try {
         if ($_POST['keyword']!="") {
-            $result = dbactions::getRentalFromDatabase($_POST['keyword']);
+            $result = dbactions::getRentalsByType($_POST['keyword']);
         } else {
-            $result = dbactions::getAllRentalsFromDatabase();
+            $result = dbactions::getAllRentals();
         }
     } catch(Exception $error) {
         echo $error->getMessage();
     }
 } else {
-    $result = dbactions::getAllRentalsFromDatabase();
+    $result = dbactions::getAllRentals();
 }
 ?>
 
@@ -31,7 +31,7 @@ if (isset($_POST['submit'])) {
     </form>
 </div>
 
-<p><a href="add_rental.php">Add rental</a></p>
+<h3><a href="add_rental.php">Add rental</a></h3>
 
 <div id="results">
 
@@ -55,8 +55,8 @@ if (isset($_POST['submit'])) {
                 <div id="<?php echo escape($row['id']); ?>" style="visibility: visible" class="resultcontent">
                     <p><?php echo escape($row['vehicle_description']); ?></p>
                     <p>Added: <?php echo date("d-m-Y H:i", strtotime(escape($row['add_date']))); ?>
-                    <span class="tab"><a href="update.php?id=<?php echo escape($row['id']); ?>">Edit</a></span>
-                    <span class="tab"><a href="#remove">Remove</a></span>       
+                    <span class="tab"><a href="update.php?id=<?php echo escape($row['id']); ?>">Edit</a></span>    
+                    <span class="tab"><a href="delete.php?id=<?php echo escape($row['id']); ?>">Remove</a></span>   
                     </p>
                 </div>
             </div>

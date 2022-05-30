@@ -5,9 +5,9 @@ if (isset($_POST['submit'])) {
         require "dbactions.php";
 
         if ($_POST['keyword']!="") {
-            $result = getRentalFromDatabase($_POST['keyword']);
+            $result = dbactions::getRentalsByType($_POST['keyword']);
         } else {
-            $result = getAllRentalsFromDatabase();
+            $result = dbactions::getAllRentals();
         }
     } catch(Exception $error){
         echo $error->getMessage();
@@ -19,6 +19,8 @@ if (isset($_POST['submit'])) {
         require "../common.php" ?>
 
 <body>
+
+<a href="index.php"><< Front page</a>
 
     <form method="POST">
         <fieldset>
@@ -54,7 +56,7 @@ if (isset($_POST['submit'])) {
         <tr>
             <td><?php echo escape($row["id"]); ?></td>
             <td><?php echo escape($row['vehicle']); ?></td>
-            <td><?php echo escape($row['type']); ?></td>
+            <td><?php echo escape($row['vehicle_type']); ?></td>
             <td><?php echo escape($row['price']); ?></td>
         </tr>
         <?php } ?>
